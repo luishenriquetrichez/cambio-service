@@ -1,0 +1,25 @@
+server:
+  port: 8100
+spring:
+  application:
+    name: conversao_moeda
+  datasource:
+    url: jdbc:postgresql://localhost/conversao_moeda
+    username: postgres
+    password: 1234
+  jpa:
+    hibernate:
+      ddl-auto: none
+    show-sql: true
+    properties:
+      hibernate:
+        format_sql: true
+  flyway:
+    locations:
+    - classpath:/db_migration
+management:
+  endpoints:
+    web:
+      exposure:
+        include:
+        - '*'
